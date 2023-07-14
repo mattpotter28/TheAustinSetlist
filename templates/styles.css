@@ -1,0 +1,67 @@
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #FFFFFF;
+  }
+  
+  .header {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .divider {
+    border: none;
+    height: 1px;
+    background-color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+  
+  .section-heading {
+    color: var(--secondary-color);
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  
+  .concert-entry {
+    margin-bottom: 20px;
+  }
+  
+  .concert-entry h3 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .concert-entry p {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+  
+  .concert-entry .artists {
+    font-weight: bold;
+  }
+  
+  .concert-entry .openers {
+    font-style: italic;
+  }
+  
+  .concert-entry .date {
+    font-weight: bold;
+  }
+  
+  .concert-entry .venue {
+    font-style: italic;
+  }
+  
+  a {
+    color: var(--link-color);
+    text-decoration: none;
+  }
+  
