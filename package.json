@@ -4,7 +4,7 @@
   "description": "The Austin Setlist is a newsletter that provides music enthusiasts in Austin, Texas with weekly updates on new concerts announced and upcoming concerts in the area. Stay up-to-date with the vibrant music scene of Austin, the Live Music Capital of the World!",
   "main": "index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/index.js && http-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
