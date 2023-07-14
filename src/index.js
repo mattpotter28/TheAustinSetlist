@@ -1,17 +1,27 @@
-const newsletterGenerator = require('./newsletterGenerator');
+const fs = require('fs');
+const { generateNewsletter } = require('./newsletterGenerator');
 
-async function run() {
+async function generateAndSaveNewsletter() {
   try {
     // Generate the newsletter content
-    const newsletterContent = await newsletterGenerator.generateNewsletter();
+    const newsletterContent = await generateNewsletter();
 
-    // TODO: Send the newsletter content to subscribers using an email service provider
+    // Read the contents of newsletterTemplate.html
+    const templateContent = fs.readFileSync('templates/newsletterTemplate.html', 'utf8');
 
-    console.log('Newsletter generated successfully!');
+    // Replace the placeholder sections with the generated content
+    const finalContent = templateContent
+      .replace('<!-- Concert entries for new concerts will be dynamically inserted here -->', newsletterContent.newConcertsHTML)
+      .replace('<!-- Concert entries for upcoming concerts will be dynamically inserted here -->', newsletterContent.upcomingConcertsHTML);
+
+    // Write the final content to the newsletter.html file
+    fs.writeFileSync('newsletter.html', finalContent);
+
+    console.log('Newsletter generated and saved successfully!');
   } catch (error) {
-    console.error('Error generating the newsletter:', error);
+    console.error('Error generating and saving the newsletter:', error);
   }
 }
 
-// Run the program
-run();
+// Call the function to generate and save the newsletter
+generateAndSaveNewsletter();
