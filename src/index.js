@@ -7,12 +7,21 @@ async function generateAndSaveNewsletter() {
     const newsletterContent = await generateNewsletter();
 
     // Read the contents of newsletterTemplate.html
-    const templateContent = fs.readFileSync('templates/newsletterTemplate.html', 'utf8');
+    const templateContent = fs.readFileSync(
+      'templates/newsletterTemplate.html',
+      'utf8'
+    );
 
     // Replace the placeholder sections with the generated content
     const finalContent = templateContent
-      .replace('<!-- Concert entries for new concerts will be dynamically inserted here -->', newsletterContent.newConcertsHTML)
-      .replace('<!-- Concert entries for upcoming concerts will be dynamically inserted here -->', newsletterContent.upcomingConcertsHTML);
+      .replace(
+        '<!-- Concert entries for new concerts will be dynamically inserted here -->',
+        newsletterContent.newConcertsHTML
+      )
+      .replace(
+        '<!-- Concert entries for upcoming concerts will be dynamically inserted here -->',
+        newsletterContent.upcomingConcertsHTML
+      );
 
     // Write the final content to the newsletter.html file
     fs.writeFileSync('newsletter.html', finalContent);

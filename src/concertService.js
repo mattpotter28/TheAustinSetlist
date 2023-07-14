@@ -11,7 +11,9 @@ async function fetchNewConcerts() {
   const endDate = formatDate(today);
 
   try {
-    const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&startDateTime=${startDate}&endDateTime=${endDate}&city=Austin&stateCode=TX`);
+    const response = await axios.get(
+      `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&startDateTime=${startDate}&endDateTime=${endDate}&city=Austin&stateCode=TX`
+    );
     return response.data._embedded.events;
   } catch (error) {
     console.error('Error fetching new concerts:', error);
@@ -28,7 +30,9 @@ async function fetchUpcomingConcerts() {
   const endDate = formatDate(nextWeek);
 
   try {
-    const response = await axios.get(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&startDateTime=${startDate}&endDateTime=${endDate}&city=Austin&stateCode=TX`);
+    const response = await axios.get(
+      `https://app.ticketmaster.com/discovery/v2/events.json?apikey=${apiKey}&startDateTime=${startDate}&endDateTime=${endDate}&city=Austin&stateCode=TX`
+    );
     return response.data._embedded.events;
   } catch (error) {
     console.error('Error fetching upcoming concerts:', error);
@@ -38,5 +42,5 @@ async function fetchUpcomingConcerts() {
 
 module.exports = {
   fetchNewConcerts,
-  fetchUpcomingConcerts,
+  fetchUpcomingConcerts
 };

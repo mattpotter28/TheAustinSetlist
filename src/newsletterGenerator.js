@@ -27,12 +27,17 @@ async function generateNewsletter() {
 // Helper function to generate HTML for concert entries
 function generateConcertsHTML(concerts) {
   return concerts
-    .map(concert => {
+    .map((concert) => {
       const { name, dates, _embedded } = concert;
       const { start } = dates;
       const { attractions } = _embedded;
-      const artists = attractions.map(attraction => attraction.name).join(', ');
-      const openers = attractions.slice(1).map(attraction => attraction.name).join(', ');
+      const artists = attractions
+        .map((attraction) => attraction.name)
+        .join(', ');
+      const openers = attractions
+        .slice(1)
+        .map((attraction) => attraction.name)
+        .join(', ');
 
       return `
         <div>
@@ -48,5 +53,5 @@ function generateConcertsHTML(concerts) {
 }
 
 module.exports = {
-  generateNewsletter,
+  generateNewsletter
 };
