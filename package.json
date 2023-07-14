@@ -1,0 +1,19 @@
+{
+  "name": "theaustinsetlist",
+  "version": "1.0.0",
+  "description": "The Austin Setlist is a newsletter that provides music enthusiasts in Austin, Texas with weekly updates on new concerts announced and upcoming concerts in the area. Stay up-to-date with the vibrant music scene of Austin, the Live Music Capital of the World!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattpotter28/TheAustinSetlist.git"
+  },
+  "author": "Matthew Potter",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattpotter28/TheAustinSetlist/issues"
+  },
+  "homepage": "https://github.com/mattpotter28/TheAustinSetlist#readme"
+}
