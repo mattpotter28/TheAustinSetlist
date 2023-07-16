@@ -2,4 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 echo "=== Running Pre-Commit Code Formatting Hook 💾📝==="
 npm run lint
-echo "=== Pre-Commit Code Formatting Hook Passed ✅ ==="
+echo "=== Pre-Commit Code Formatting Hook Passed ✅✅✅ ==="
+echo "=== Running Pre-Commit Code Lint Hook 🧹🕵️ ==="
+npx eslint ./
+echo "=== Pre-Commit Code Lint Hook Passed ✅✅✅ ==="

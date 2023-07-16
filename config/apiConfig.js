@@ -6,4 +6,4 @@ const apiConfig = {
   }
 };
 
-module.exports = apiConfig;
+export default apiConfig;
