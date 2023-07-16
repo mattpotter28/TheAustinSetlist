@@ -1,4 +1,4 @@
-import concertService from './concertService';
+const concertService = require('./concertService');
 
 // Function to generate the newsletter content
 async function generateNewsletter() {
@@ -52,6 +52,6 @@ function generateConcertsHTML(concerts) {
     .join('');
 }
 
-export default {
+module.exports = {
   generateNewsletter
 };

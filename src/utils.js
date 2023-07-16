@@ -6,6 +6,6 @@ function formatDate(date) {
   return `${year}-${month}-${day}`;
 }
 
-export default {
+module.exports = {
   formatDate
 };

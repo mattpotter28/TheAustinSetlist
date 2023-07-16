@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync } from 'fs';
-import { generateNewsletter } from './newsletterGenerator';
+const fs = require('fs');
+const { generateNewsletter } = require('./newsletterGenerator');
 
 async function generateAndSaveNewsletter() {
   try {
@@ -7,7 +7,7 @@ async function generateAndSaveNewsletter() {
     const newsletterContent = await generateNewsletter();
 
     // Read the contents of newsletterTemplate.html
-    const templateContent = readFileSync(
+    const templateContent = fs.readFileSync(
       'templates/newsletterTemplate.html',
       'utf8'
     );
@@ -24,7 +24,7 @@ async function generateAndSaveNewsletter() {
       );
 
     // Write the final content to the newsletter.html file
-    writeFileSync('newsletter.html', finalContent);
+    fs.writeFileSync('newsletter.html', finalContent);
 
     console.log('Newsletter generated and saved successfully!');
   } catch (error) {
